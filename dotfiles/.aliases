@@ -19,20 +19,16 @@
 # ~                                 cd to ~
 # dt, dl                            cd to Desktop/Downloads
 # dots                              Open ~/dotfiles in atom
-# mb                                Open ~/macback in atom
+# m1                                Open ~/macback-m1 in atom
+# m2                                Open ~/macback-intel in atom
 
 ################################################################################
 # CLEANUP/UPDATE
 ################################################################################
 
 # brewup                            Homebrew | Update, upgrade, cleanup...
-# update                            Get macOS Software Updates, and update installed Ruby gems, npm, and their installed packages
+# update, sysup                     Get macOS Software Updates, and update installed Ruby gems, npm, and their installed packages
 # brun, unbrew                      Homebrew | uninstall
-# rm                                Replace rm with trash to send files to Trash
-# synca                             Sync & push .aliases
-# syncb                             Sync & push Brewfile
-# syncall                           Sync & push both .aliases & Brewfile
-# backup                            Backup dotfiles and ~/Library/Preferences to Dropbox
 
 ################################################################################
 # EVERYTHING ELSE
@@ -50,7 +46,6 @@
 # please                            sudo
 # scan, audit                       Run a system audit using Lynis
 # cat                               Open a file with cat clone bat
-# man                               Replace man with tldr
 # ifactive                          Show active network interfaces
 # mount                             Make mount command output easier to read
 
@@ -74,17 +69,14 @@ alias ~='cd ~'
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias dots="cd ~/dotfiles && at && cd ~/"
-alias mb="cd ~/macback && at && cd ~/"
+alias m1="cd ~/macback-m1 && at && cd ~/"
+alias m2="cd ~/macback-intel && at && cd ~/"
 
 alias brewup="brew -v update && brew -v upgrade &&  brew cu --all --yes --cleanup --force && brew -v cleanup --prune=0 && brew doctor && brew -v upgrade --greedy"
 alias update='sudo softwareupdate -i -a; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+alias sysup='sudo softwareupdate -i -a; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
 alias brun="brew uninstall -v "
 alias unbrew="brew uninstall -v "
-alias rm='trash '
-alias synca="rsync -rtuv ~/macback/dotfiles/.aliases ~/dotfiles/.aliases && cd ~/macback && pushit && cd ~/dotfiles && pushit && cd ~/"
-alias syncb="rsync -rtuv ~/homebrew-brewfile/Brewfile ~/macback/Brewfile && rsync -rtuv ~/macback/Brewfile ~/homebrew-brewfile/Brewfile && cd ~/homebrew-brewfile && pushit && cd ~/"
-alias syncall="rsync -rtuv ~/macback/dotfiles/.aliases ~/dotfiles/.aliases && cd ~/macback && pushit && cd ~/dotfiles && pushit && rsync -rtuv ~/homebrew-brewfile/Brewfile ~/macback/Brewfile && rsync -rtuv ~/macback/Brewfile ~/homebrew-brewfile/Brewfile && cd ~/homebrew-brewfile && pushit && rsync -rtuv ~/dotfiles/.aliases ~/macback/dotfiles/.aliases && rsync -rtuv ~/macback/dotfiles/.aliases ~/dotfiles/.aliases && cd ~/dotfiles && pushit && cd ~/"
-alias backup="rsync -av --delete --exclude-from='.excludes-file.txt' ~/.??* ~/Dropbox/Backups/dotfiles/ && rsync -av --delete ~/Library/Preferences/ ~/Dropbox/Backups/Preferences/"
 
 alias open="micro"
 alias ex="micro ~/.excludes-file.txt"
@@ -103,6 +95,5 @@ alias please="sudo "
 alias scan="lynis audit system"
 alias audit="lynis audit system"
 alias cat="clear && bat "
-alias man="tldr "
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
 alias mount='mount | column -t'

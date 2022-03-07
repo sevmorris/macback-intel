@@ -1,7 +1,7 @@
 # macback [Intel edition]
 
 My methods of configuring, deploying and redeploying macOS on an Intel Mac.
-
+(See [macback - M1 edition](https://github.com/sevmorris/macback-m1) for M1 Macs)
 
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)<br>
 :ukraine:
