@@ -1,0 +1,108 @@
+
+################################################################################
+# LIST VARIATIONS
+################################################################################
+
+# lm                                List all & sorts by modification date with most recent first and directories first
+# ll, ld                            List only visible files & folders
+# la                                List all files and folders
+# lf                                List only (and all) files
+# trees                             List in tree form using exa (calls a function located in .bashrc)
+# path                              Print each PATH entry on a separate line
+# df                                Give an overview of the filesystem disk space usage using duf instead of df
+
+################################################################################
+# NAVIGATION
+################################################################################
+
+# ..                                cd back/up a directory
+# ~                                 cd to ~
+# dt, dl                            cd to Desktop/Downloads
+# dots                              Open ~/dotfiles in atom
+# mb                                Open ~/macback in atom
+
+################################################################################
+# CLEANUP/UPDATE
+################################################################################
+
+# brewup                            Homebrew | Update, upgrade, cleanup...
+# update                            Get macOS Software Updates, and update installed Ruby gems, npm, and their installed packages
+# brun, unbrew                      Homebrew | uninstall
+# rm                                Replace rm with trash to send files to Trash
+# synca                             Sync & push .aliases
+# syncb                             Sync & push Brewfile
+# syncall                           Sync & push both .aliases & Brewfile
+# backup                            Backup dotfiles and ~/Library/Preferences to Dropbox
+
+################################################################################
+# EVERYTHING ELSE
+################################################################################
+
+# open                              Open file for editing in micro
+# bashrc, aliases, ex               Open .bashrc/.aliases/.excludes-file.txt in micro
+# reload                            Reload the shell (i.e. invoke as a login shell)
+# mon                               Run gtop system monitor
+# findit                            Use fd instead of find
+# size <target file or dir>         Find size of file or directory (calls a function located in .bashrc)
+# shrug                             Copy ¯\_(ツ)_/¯ to the clipboard
+# c                                 Clear & source .bashrc
+# s                                 Turn off the screen
+# please                            sudo
+# scan, audit                       Run a system audit using Lynis
+# cat                               Open a file with cat clone bat
+# man                               Replace man with tldr
+# ifactive                          Show active network interfaces
+# mount                             Make mount command output easier to read
+
+
+
+################################################################################
+# ALIASES
+################################################################################
+
+alias lm="exa -a --header --group --long --git --sort=mod --reverse --group-directories-first"
+alias ll="exa --header --group --long --git --group-directories-first"
+alias ld="exa --header --group --long --git --group-directories-first"
+alias la="exa -a --header --group --long --git --group-directories-first"
+alias lf="fls f -a1 --color=always"
+alias files="fls f -a1 --color=always"
+alias trees="exa --tree --level=2 --header --group --long --git --icons ."
+alias path='echo -e ${PATH//:/\\n}'
+
+alias ..='cd ..'
+alias ~='cd ~'
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias dots="cd ~/dotfiles && at && cd ~/"
+alias mb="cd ~/macback && at && cd ~/"
+
+alias brewup="brew -v update && brew -v upgrade &&  brew cu --all --yes --cleanup --force && brew -v cleanup --prune=0 && brew doctor && brew -v upgrade --greedy"
+alias update='sudo softwareupdate -i -a; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+alias brun="brew uninstall -v "
+alias unbrew="brew uninstall -v "
+alias rm='trash '
+alias synca="rsync -rtuv ~/macback/dotfiles/.aliases ~/dotfiles/.aliases && cd ~/macback && pushit && cd ~/dotfiles && pushit && cd ~/"
+alias syncb="rsync -rtuv ~/homebrew-brewfile/Brewfile ~/macback/Brewfile && rsync -rtuv ~/macback/Brewfile ~/homebrew-brewfile/Brewfile && cd ~/homebrew-brewfile && pushit && cd ~/"
+alias syncall="rsync -rtuv ~/macback/dotfiles/.aliases ~/dotfiles/.aliases && cd ~/macback && pushit && cd ~/dotfiles && pushit && rsync -rtuv ~/homebrew-brewfile/Brewfile ~/macback/Brewfile && rsync -rtuv ~/macback/Brewfile ~/homebrew-brewfile/Brewfile && cd ~/homebrew-brewfile && pushit && rsync -rtuv ~/dotfiles/.aliases ~/macback/dotfiles/.aliases && rsync -rtuv ~/macback/dotfiles/.aliases ~/dotfiles/.aliases && cd ~/dotfiles && pushit && cd ~/"
+alias backup="rsync -av --delete --exclude-from='.excludes-file.txt' ~/.??* ~/Dropbox/Backups/dotfiles/ && rsync -av --delete ~/Library/Preferences/ ~/Dropbox/Backups/Preferences/"
+
+alias open="micro"
+alias ex="micro ~/.excludes-file.txt"
+alias bashrc="micro ~/dotfiles/.bashrc && c && . ~/.bashrc"
+alias aliases="micro ~/dotfiles/.aliases && c && . ~/.aliases"
+alias ex="micro ~/.excludes-file.txt"
+alias brewfile="micro ~/homebrew-brewfile/Brewfile"
+alias reload="exec $SHELL -l"
+alias mon="gtop"
+alias findit="fd "
+alias size="fs "
+alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
+alias c="clear && source ~/.bashrc"
+alias s="pmset displaysleepnow"
+alias please="sudo "
+alias scan="lynis audit system"
+alias audit="lynis audit system"
+alias cat="clear && bat "
+alias man="tldr "
+alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
+alias mount='mount | column -t'
