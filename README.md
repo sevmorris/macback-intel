@@ -222,7 +222,7 @@ rm -r $HOME/macback
 <details>
   <summary>open</summary>
   <br>
-  Opens file for editing in the text editor micro <sup>5</sup> .  
+  Opens file for editing in the text editor micro <sup>4</sup> .  
 
 </details>
 
@@ -230,7 +230,7 @@ rm -r $HOME/macback
 <details>
   <summary>update</summary>
   <br>
-  Gets macOS Software Updates (using mas <sup>6</sup>), and updates installed Ruby gems, npm, and their installed packages.
+  Gets macOS Software Updates (using mas <sup>5</sup>), and updates installed Ruby gems, npm, and their installed packages.
 
 </details>
 
@@ -247,8 +247,8 @@ rm -r $HOME/macback
 <sup>1</sup> [lynis](https://formulae.brew.sh/formula/lynis#default)<br>
 <sup>2</sup> [bat](https://formulae.brew.sh/formula/bat#default)<br>
 <sup>3</sup> [duf](https://formulae.brew.sh/formula/duf#default)<br>
-<sup>5</sup> [micro](https://formulae.brew.sh/formula/micro#default)<br>
-<sup>6</sup> [mas](https://formulae.brew.sh/formula/mas#default)
+<sup>4</sup> [micro](https://formulae.brew.sh/formula/micro#default)<br>
+<sup>5</sup> [mas](https://formulae.brew.sh/formula/mas#default)
 
 
 ---
