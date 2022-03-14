@@ -8,7 +8,6 @@ My methods of configuring, deploying and redeploying macOS on an Intel Mac.<br>
 
 :exclamation: This is all _very much_ a WIP. My door is always open if anyone has any feedback, tips or suggestions.
 
-
 ## Tasks
 
 - Switch to Bash
@@ -124,7 +123,7 @@ Tweak some Mac defaults, add some dotfiles, and (optionally) remove Dock icons (
 Clone the repo and run the scripts:
 
 ```
-git clone https://github.com/sevmorris/macback.git && cd macback/scripts
+git clone https://github.com/sevmorris/macback-intel.git && cd macback/scripts
 chmod 755 tweaks.sh
 ./tweaks.sh && cd ~
 ```
@@ -133,22 +132,6 @@ chmod 755 tweaks.sh
 
 ---
 ### Brewfile
-
-You can create a [Brewfile](https://github.com/Homebrew/homebrew-bundle) using [Homebrew Bundle](https://docs.brew.sh/Manpage#bundle-subcommand) to index everything installed with Homebrew and the Mac App Store.
-
-> :point_right: If you have a Github repo (called "homebrew-brewfile") containing your Brewfile and you decide to run Strap then Strap should use that repo to install apps.
-
----
-To create a "master list" Brewfile:
-
-```
-brew bundle dump --force --describe
-```
-
-> `--force` overwrites an existing Brewfile.<br>
-> `--describe` adds a brief description for each entry.
-
-Again, this is a *complete* list of apps installed via Homebrew and the Mac App Store.<br>
 
 > For practical purposes I maintain a curated Brewfile that lives in a Github repo. I would rather manage mas apps manually, and I definitely do not want to install every cask I have installed every time I start fresh. Strap will use this list to install my selected apps. If you're installing locally with Homebrew then you should have a look at your Brewfile and remove anything you don't want to install now, or replace it with my curated Brewfile instead.
 
@@ -206,80 +189,64 @@ rm -r $HOME/macback
 
 <details>
   <summary>audit</summary>
-<br>
-Runs a system audit using security and system auditing tool Lynis <sup>1</sup>.
+  <br>
+  Runs a system audit using security and system auditing tool Lynis <sup>1</sup>.
 
 </details>
 
 
 <details>
-  <summary>backup</summary>
-<br>
-Backs up dotfiles and ~/Library/Preferences, (not including files listed in .excludes-file.txt) to a Dropbox folder.
-
-  </details>
-
-
-<details>
   <summary>brewup</summary>
-<br>
-Updates, upgrades & cleans up Homebrew.
+  <br>
+  Updates, upgrades & cleans up Homebrew.
 
-  </details>
+</details>
 
 
 <details>
   <summary>cat</summary>
-<br>
-Opens a file with cat clone bat <sup>2</sup>.
+  <br>
+  Opens a file with cat clone bat <sup>2</sup>.
 
 </details>
 
 
 <details>
   <summary>df</summary>
-<br>
-Gives an overview of the filesystem disk space usage using Disk Usage/Free utility (duf) <sup>3</sup> instead of df.
-
-  </details>
-
-
-<details>
-  <summary>man</summary>
-<br>
-Replaces man with the simplified and community-driven tldr <sup>4</sup>.
+  <br>
+  Gives an overview of the filesystem disk space usage using Disk Usage/Free utility (duf) <sup>3</sup> instead of df.
 
 </details>
 
 
 <details>
   <summary>open</summary>
-<br>
-Opens file for editing in the text editor micro <sup>5</sup> .  
+  <br>
+  Opens file for editing in the text editor micro <sup>5</sup> .  
 
-  </details>
+</details>
+
+
+<details>
+  <summary>update</summary>
+  <br>
+  Gets macOS Software Updates (using mas <sup>6</sup>), and updates installed Ruby gems, npm, and their installed packages.
+
+</details>
 
 
 <details>
   <summary>shrug</summary>
-<br>
-Copies ¯\_(ツ)_/¯ to the clipboard
+  <br>
+  Copies ¯\_(ツ)_/¯ to the clipboard
 
-  </details>
-
-<details>
-  <summary>update</summary>
-<br>
-Gets macOS Software Updates (using mas <sup>6</sup>), and updates installed Ruby gems, npm, and their installed packages.
-
-  </details>
+</details>
 
 <br>
 
 <sup>1</sup> [lynis](https://formulae.brew.sh/formula/lynis#default)<br>
 <sup>2</sup> [bat](https://formulae.brew.sh/formula/bat#default)<br>
 <sup>3</sup> [duf](https://formulae.brew.sh/formula/duf#default)<br>
-<sup>4</sup> [tldr](https://formulae.brew.sh/formula/tldr#default)<br>
 <sup>5</sup> [micro](https://formulae.brew.sh/formula/micro#default)<br>
 <sup>6</sup> [mas](https://formulae.brew.sh/formula/mas#default)
 
@@ -287,12 +254,9 @@ Gets macOS Software Updates (using mas <sup>6</sup>), and updates installed Ruby
 ---
 ### Notes
 
-- Some of my dotfiles (.aliases, .bashrc, etc) live in ~/dotfiles and a Github repo. Locally they're symlinked in ~/.<br>
-- My Brewfile lives in ~/homebrew-brewfile  and a Guthub repo.<br>
-- If you run Strap and have these repos it should pull from both.
-- There's an alias (`backup`) for backing up user preferences and some dotfiles (excluding the ones in ~/dotfiles. It rsyncs to a Dropbox folder, which you would need to create before running. Refer to the alias for dir names.<br>
-- There's a file (~/excludes-file.txt) that lists anything that doesn't need to (or shouldn't) be included in the backup. I've barely started digging into what doesn't need to be backed up, so the list will probably grow. (Help?)
-- Some aliases are useful only to me (synca, syncb...) since I use them to make sure my macback files and local files stay in sync.
+Some of my dotfiles (.aliases, .bashrc, etc) live in ~/dotfiles and a Github repo. Locally they're symlinked in ~/.<br>
+My Brewfile lives in ~/homebrew-brewfile  and a Guthub repo.<br>
+If you run Strap and have these repos it should pull from both.
 
 
 ---
