@@ -9,7 +9,7 @@ yellow=$(tput setaf 3)
 blue=$(tput setaf 4)
 reset=$(tput sgr0)
 
-MACBACK=$HOME/macback
+MACBACK=$HOME/macback-intel
 DOTS=$MACBACK/dotfiles
 aliases=$DOTS/.aliases
 prompt=$DOTS/.bash_prompt
