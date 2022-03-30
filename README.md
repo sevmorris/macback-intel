@@ -122,7 +122,7 @@ Tweak some Mac defaults, add some dotfiles, and (optionally) remove all Dock ico
 Clone the repo and run the scripts:
 
 ```
-git clone https://github.com/sevmorris/macback-intel.git && cd macback/scripts
+git clone https://github.com/sevmorris/macback-intel.git && cd macback-intel/scripts
 chmod 755 tweaks.sh
 ./tweaks.sh && cd ~
 ```
