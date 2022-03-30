@@ -25,4 +25,4 @@ brew=$MACBACK/Brewfile
 . docknuke.sh
 
 # Move dotfiles to ~/
-mv -f $aliases $prompt $profile $bashrc $excludes $brew $HOME
+mv -f $aliases $prompt $profile $bashrc $brew $HOME
