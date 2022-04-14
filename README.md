@@ -14,7 +14,7 @@ See [macback - M1 edition](https://github.com/sevmorris/macback-m1) for M1 Macs.
 - Run [Strap](https://github.com/MikeMcQuaid/strap)
 - Run a script to tweak some Mac preferences
 - Brewfile
-- Switch to new Bash
+- Switch to modern Bash
 
 ---
 ### Switch to Bash
@@ -154,9 +154,9 @@ brewup
 ```
 
 ---
-### Switch to new Bash
+### Switch to modern Bash
 
-A newer version of Bash is installed via Homebrew. Time to switch to that.
+macOS comes with an older version of Bash. A newer version is installed via Homebrew. Time to switch to that.
 
 > :exclamation: This is specific to Intel Macs.
 
