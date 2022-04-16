@@ -2,11 +2,13 @@
 
 tap "bramstein/webfonttools"
 tap "buo/cask-upgrade"
+tap "homebrew/autoupdate"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
+tap "homebrew/command-not-found"
 tap "homebrew/core"
 tap "homebrew/services"
 
