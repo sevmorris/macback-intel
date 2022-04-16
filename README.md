@@ -1,6 +1,6 @@
 # macback [Intel edition]
 
-Configure macOS on an Intel Mac.
+How I configure macOS on an Intel Mac.
 
 See [macback - M1 edition](https://github.com/sevmorris/macback-m1) for M1 Macs.
 
