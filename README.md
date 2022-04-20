@@ -177,7 +177,7 @@ chsh -s /usr/local/bin/bash
 Delete the repo folder:
 
 ```
-rm -r $HOME/macback
+rm -r $HOME/macback-intel
 ```
 
 
