@@ -3,11 +3,6 @@ if [ -f ~/.bashrc ]; then
   . ~/.bashrc
 fi
 
-HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
-if [ -f "$HB_CNF_HANDLER" ]; then
-source "$HB_CNF_HANDLER";
-fi
-
 export EDITOR=nano
 export PAGER="most"
 export CLICOLOR=1
@@ -39,39 +34,3 @@ export GPG_TTY=$(tty);
 
 # Hide the “default interactive shell is now zsh” warning on macOS.
 export BASH_SILENCE_DEPRECATION_WARNING=1;
-
-export PATH=$HOME/.local/share/bin:$PATH
-
-export PATH="/usr/local/bin:$PATH"
-
-# most programs
-export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
-
-# coreutils
-export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="$(brew --prefix)/opt/coreutils/libexec/gnuman:$MANPATH"
-
-# make
-export PATH="$(brew --prefix)/opt/make/libexec/gnubin:$PATH"
-export MANPATH="$(brew --prefix)/opt/make/libexec/gnuman:$MANPATH"
-
-# ed
-export PATH="$(brew --prefix)/opt/ed/libexec/gnubin:$PATH"
-
-# findutils
-export PATH="$(brew --prefix)/opt/findutils/libexec/gnubin:$PATH"
-
-# gnu-indent
-export PATH="$(brew --prefix)/opt/gnu-indent/libexec/gnubin:$PATH"
-
-# gnu-sed
-export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
-
-# gnu-tar
-export PATH="$(brew --prefix)/opt/gnu-tar/libexec/gnubin:$PATH"
-
-# gnu-which
-export PATH="$(brew --prefix)/opt/gnu-which/libexec/gnubin:$PATH"
-
-# grep
-export PATH="$(brew --prefix)/opt/grep/libexec/gnubin:$PATH"
