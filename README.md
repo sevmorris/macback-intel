@@ -153,9 +153,7 @@ brewup
 ---
 ### Switch to modern Bash
 
-macOS comes with an older version of Bash. A newer version is installed via Homebrew. Time to switch to that.
-
-> :exclamation: This is specific to Intel Macs.
+Replace the outdated version of Bash that comes with macOS.
 
 ```
 sudo -i
