@@ -1,9 +1,8 @@
 # macback [Intel edition]
 
-How I configure macOS on an Intel Mac.
-
-## NOTE: I've overhauled this to work on both Intel & M1 Macs.
-## Please see [macback](https://github.com/sevmorris/macback) now.
+## Archived
+# This project has been rewritten to work on both Intel & M1 Macs.
+# Please see [macback](https://github.com/sevmorris/macback).
 
 ## Tasks
 
